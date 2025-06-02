@@ -1,0 +1,18 @@
+Coffee shop that can do multiple things like take orders, get backlog, process order, specify coffee options, transaction log.
+
+:orders %{order-number (int) => order_details}
+
+order_details = %{item-name: "item-name", sweetness: 3, customer: "customer-name"}
+
+matcha, ice coffee, hot tea.
+
+Monday 26 May:
+Specified structure for coffeshop orders.
+Initialize genserver with next order id and dummy order.
+handle call for get orders to get all current orders.
+handle call for get order by order id.
+handle call for add order.
+
+Goals for tomorrow:
+process order ("mock process").
+log processed orders to log file.
