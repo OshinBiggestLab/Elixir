@@ -2,7 +2,7 @@ defmodule Starbucks do
 @doc """
   A part of Elixir Hour’s example code from the first week on the GenServer topic by Mr. Jero.
   Contents:
-  - @doc :  Documented function
+  - @doc :  Documenting functions
   - @module : Documenting Modules
   - spawn, receive, and send messages
 """
