@@ -5,30 +5,34 @@ defmodule TenTasks do
   purpose:
   - To demonstrate the use of `spawn` to create concurrent tasks.
   - Practice using `pattern matching`
+
+
+  • send(pid, message) sends a message to a process. / self() returns the PID (process ID) of the current process.
  """
 
- # ⬇️ 10 tasks inside main/0
+ # ⬇️ main calls task/0
   def main do
      task()
-     task()
-     task()
-     task()
-     task()
-     task()
-     task()
-     task()
-     task()
-     task()
+    #  task()
+    #  task()
+    #  task()
+    #  task()
+    #  task()
+    #  task()
+    #  task()
+    #  task()
+    #  task()
   end
 
+# ⬇️ task function spawns a new process
  def task do
    spawn(fn ->
-     send(self(), :go)
-     execute_task()
+     send(self(), :go) # ⬅️ sends a message to itself (with send(self(), :go)).
+     print_i_am_done() # ⬅️ calls print_i_am_done/0.
    end)
  end
 
- defp execute_task do
+ defp print_i_am_done do
    receive do
      :go -> IO.puts("I am done")
    end
